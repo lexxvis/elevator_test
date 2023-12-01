@@ -1,0 +1,41 @@
+name: elevator_test
+description: elevator test app
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  device_preview: ^1.1.0
+  go_router: ^12.1.1
+  ionicons: ^0.2.2
+  provider: ^6.1.1
+  drift: ^2.13.0
+  sqlite3_flutter_libs: ^0.5.0
+  path_provider: ^2.0.0
+  path: ^1.8.3
+  pigeon: ^14.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  drift_dev: ^2.13.0
+  build_runner: ^2.4.6
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+     - assets/images/elevator.jpg
+  fonts:
+     - family: Inter
+       fonts:
+          - asset: assets/fonts/inter.ttf
