@@ -56,9 +56,10 @@ class FloorsPageState extends State<FloorsPage> {
                 Expanded(
                     flex: 7,
                     child: CustomScrollView(
-                      //controller: _controller,
                       slivers: <Widget>[
-                        SliverList(
+                        /// use SliverFixedExtendList instead of SliverList
+                        /// 'cause height of child element is fixed
+                        SliverFixedExtentList(
                           delegate: SliverChildBuilderDelegate(
                             (_, index) => FloorItem(
                               color: _checkColor(index),
@@ -70,6 +71,8 @@ class FloorsPageState extends State<FloorsPage> {
                             ),
                             childCount: widget.floorsCounter ?? 0,
                           ),
+                          itemExtent: MediaQuery.sizeOf(context).height /
+                              layoutHeight * 70,
                         ),
                       ],
                     )),

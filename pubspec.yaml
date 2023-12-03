@@ -19,7 +19,9 @@ dependencies:
   path_provider: ^2.0.0
   path: ^1.8.3
   pigeon: ^14.0.0
-
+#  workmanager: ^0.5.2
+# conflict kotlin in pigeon and workmanager plugins
+# solution: in build.gradle app file change to ext.kotlin_version = '1.8.20'
 
 dev_dependencies:
   flutter_test:

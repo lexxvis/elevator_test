@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
+
 import 'app_model.dart';
 import 'config/routers/app_routers.dart';
 
-
 final databaseHelper = DatabaseHelper();
 final pigeonApi = PigeonApi();
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +48,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
     /// load data from database
     var data = databaseHelper.getAllItems();
     data.listen((event) {
@@ -56,4 +58,3 @@ class _MyAppState extends State<MyApp> {
     });
   }
 }
-

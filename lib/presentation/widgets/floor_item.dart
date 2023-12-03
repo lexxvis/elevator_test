@@ -19,7 +19,8 @@ class FloorItem extends StatelessWidget {
   final Color color;
 
   const FloorItem(
-      {required this.index,
+      {super.key,
+      required this.index,
       required this.height,
       required this.width,
       required this.color});
@@ -27,28 +28,22 @@ class FloorItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      /// find the anccestor of eitem ( third screen widget )
+      /// find the ancestor of item ( third screen widget )
       /// and start elevate animation
       onTap: () => context
           .findAncestorStateOfType<FloorsPageState>()
           ?.startElevate(index),
       child: Align(
         alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: height / 3),
-            Container(
-              width: width,
-              height: height,
-              decoration: BoxDecoration(
-                color: color,
-                border: Border.all(width: 1, color: Colors.black),
-                borderRadius: const BorderRadius.all(Radius.circular(16)),
-              ),
-              child: Center(child: Text('${AppStrings.floor} ${index + 1}')),
-            ),
-            SizedBox(height: height / 3),
-          ],
+        child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            color: color,
+            border: Border.all(width: 1, color: Colors.black),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
+          ),
+          child: Center(child: Text('${AppStrings.floor} ${index + 1}')),
         ),
       ),
     );
